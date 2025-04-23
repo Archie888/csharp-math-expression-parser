@@ -1,6 +1,6 @@
 # C# Math Expression Parser
 
-A powerful and flexible mathematical expression parser and evaluator written in C#. This library allows you to parse and evaluate complex mathematical expressions at runtime, supporting a wide range of mathematical operations, functions, and constants.
+A compact and flexible mathematical expression parser and evaluator written in C#. This library allows you to parse and evaluate complex mathematical expressions at runtime, supporting a wide range of mathematical operations, functions, and constants.
 
 ## Features
 
