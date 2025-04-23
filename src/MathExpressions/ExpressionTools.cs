@@ -1,4 +1,7 @@
 using System;
+#if UNITY_5_3_OR_NEWER
+using UnityEngine;
+#endif
 
 namespace MathExpressions
 {
@@ -85,7 +88,11 @@ namespace MathExpressions
         {
             if (expr == null)
             {
-                Console.WriteLine(indent + "NULL");
+                #if UNITY_5_3_OR_NEWER
+                    Debug.Log(indent + "NULL");
+                #else
+                    Console.WriteLine(indent + "NULL");
+                #endif
                 return;
             }
 
@@ -97,7 +104,11 @@ namespace MathExpressions
             else if (expr.Type == ExpressionType.Variable)
                 line += ": " + expr.VariableName;
 
-            Console.WriteLine(line);
+            #if UNITY_5_3_OR_NEWER
+                Debug.Log(line);
+            #else
+                Console.WriteLine(line);
+            #endif
 
             indent += isLast ? "    " : "│   ";
 
