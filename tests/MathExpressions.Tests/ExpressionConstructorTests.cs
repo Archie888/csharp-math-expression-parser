@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using MathExpressions;
 using System;
+using TestUtils;
 
 [TestFixture]
 public class ExpressionConstructorTests
