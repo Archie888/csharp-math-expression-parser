@@ -1,6 +1,6 @@
 # C# Math Expression Parser
 
-A compact and flexible mathematical expression parser and evaluator written in C#. This library allows you to parse and evaluate complex mathematical expressions at runtime, supporting a wide range of mathematical operations, functions, and constants.
+A compact, easy to use and flexible mathematical expression parser and evaluator written in C#. This library allows you to parse and evaluate complex mathematical expressions at runtime, supporting a wide range of mathematical operations, functions, and constants.
 
 ## Features
 
@@ -23,25 +23,59 @@ A compact and flexible mathematical expression parser and evaluator written in C
 ## Usage
 
 ```csharp
+## Usage
+
+```csharp
 using MathExpressions;
 
-// Basic arithmetic
+// Parse a simple arithmetic expression
 var parser = new ExpressionParser();
 var expression = parser.Parse("2 + 3 * 4");
-double result = expression.Evaluate(); // Returns 14
+ExpressionTools.LogExpression(expression)
+// └── Arithmetic_Addition
+//     ├── Number: 2
+//     └── Arithmetic_Multiplication
+//         ├── Number: 3
+//         └── Number: 4
 
-// Using constants
+// Using mathematical constants
 var withConstants = parser.Parse("2 * π");
-double circleResult = withConstants.Evaluate(); // Returns 6.28318...
+ExpressionTools.LogExpression(withConstants)
+// └── Arithmetic_Multiplication
+//     ├── Number: 2
+//     └── Constant_Pi
 
 // Using functions
 var withFunctions = parser.Parse("sin(π/2)");
-double sinResult = withFunctions.Evaluate(); // Returns 1.0
+ExpressionTools.LogExpression(withFunctions)
+// └── Function_Sin
+//     └── Arithmetic_Division
+//         ├── Constant_Pi
+//         └── Number: 2
 
-// Complex expressions
-var complex = parser.Parse("sqrt(pow(2, 2) + pow(3, 2))");
-double pythagoras = complex.Evaluate(); // Returns 3.60555...
+// Complex expression with multiple operations
+var complex = parser.Parse("(log(e) + sin(pi / 2)) max(1, 2 ^ 3) = sqrt(49)");
+ExpressionTools.LogExpression(complex)
+// └── Comparison_Equal
+//     ├── Arithmetic_Multiplication
+//     │   ├── Arithmetic_Addition
+//     │   │   ├── Function_Log
+//     │   │   │   └── Constant_E
+//     │   │   └── Function_Sin
+//     │   │       └── Arithmetic_Division
+//     │   │           ├── Constant_Pi
+//     │   │           └── Number: 2
+//     │   └── Function_Max
+//     │       ├── Number: 1
+//     │       └── Arithmetic_Exponent
+//     │           ├── Number: 2
+//     │           └── Number: 3
+//     └── Function_Sqrt
+//         └── Number: 49
 ```
+
+The parser constructs an expression tree that represents the mathematical expression. Each node in the tree is an `Expression` object with a specific type (arithmetic operation, function, constant, etc.) and may have sub-expressions.
+
 
 ## Installation
 
