@@ -107,7 +107,10 @@ Contributions are welcome! Feel free to:
 
 ## License
 
-MIT
+**MIT** — Free to use however you like: **commercially, non-commercially, privately, or publicly**.  
+No strings attached. Credit appreciated!
+
+☕ If this project helped you and you'd like to say thanks, you can [buy me a coffee](https://buymeacoffee.com/miikapirtola)!
 
 ## Author
 
